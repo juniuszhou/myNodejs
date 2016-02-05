@@ -1,0 +1,13 @@
+##
+npm install archiver
+
+archiver used to package the application of nodejs.
+
+
+
+
+
+7.破解 webstorm 11.
+注册时选择“License server”输入“http://idea.lanyus.com/”点击“OK”快速激活JetBrains系列产品
+安装完成也可在Help --> Register --> License server --> License server address --> 输入 http://idea.lanyus.com/
+
