@@ -14,7 +14,12 @@ router.get('/dsOne', function(req, res, next) {
 
 // set static html page
 router.get('/static', function(req, res, next) {
-    res.sendfile('./htmls/index.html');
+    res.sendfile('./htmls/divParallel.html');
+});
+
+// set static html page
+router.get('/script', function(req, res, next) {
+    res.render('simpleSVG', {title: 'show how to embed script'})
 });
 
 module.exports = router;
