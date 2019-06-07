@@ -1,0 +1,17 @@
+# run it via npm start. then server listen on 3000 port.
+
+
+
+# run it via node build/server.js. then server listen on port 80.
+add server.js in build and start express via it.
+
+
+# create react app via command tool
+npm install -g create-react-app   (全局安装create-react-app）
+npx create-react-app my-app
+npm start　（启动react项目Demo，可输入localhost:3000进入看demo）
+
+
+npx express-generator api
+
+
