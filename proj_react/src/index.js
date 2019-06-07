@@ -2,5 +2,5 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-
-ReactDOM.render(<App />, document.getElementById('root'));
+// pass name junius zhou as parameter to App component.
+ReactDOM.render(<App name={'junius zhou'}/>, document.getElementById('root'));
