@@ -1,3 +1,4 @@
 ## react
 first react project:  react-hello-world
 dynamic add item: react-add-item
+delete item: react-delete-item
