@@ -1,0 +1,53 @@
+<html>
+
+<!--通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。-->
+<!--这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。-->
+
+<head>
+    <script type="text/javascript">
+        function loadXMLDoc()
+        {
+            // 现代浏览器均支持 XMLHttpRequest 对象
+
+            var xmlhttp;
+            if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            // 最重要的函数，当有Ajax返回的时候，处理网页。
+            xmlhttp.onreadystatechange=function()
+            {
+                // 存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+                //
+                // 0: 请求未初始化
+                // 1: 服务器连接已建立
+                // 2: 请求已接收
+                // 3: 请求处理中
+                // 4: 请求已完成，且响应已就绪
+
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    // 更新myDiv组件，设置为从Ajax返回的结果。
+                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                }
+            }
+
+            // 设置请求路径，然后发送。一般都使用GET命令，极少情况下需要post。
+            xmlhttp.open("GET","/ajax/demo_get.asp",true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+
+<h2>AJAX</h2>
+<button type="button" onclick="loadXMLDoc()">请求数据</button>
+<div id="myDiv"></div>
+
+</body>
+</html>

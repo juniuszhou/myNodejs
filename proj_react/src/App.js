@@ -51,7 +51,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <div>
                     {/*get name parameter from parent component*/}
                     hello, I am {this.props.name} {2 * 3}.
@@ -60,18 +60,28 @@ class App extends React.Component {
                     <input value={this.state.inputValue} onChange={this.handleInputChange}/>
                     {/*this need rebind to button's parent class's object.*/}
                     {/*then you can update state.list defined in App.*/}
-                    <button onClick={this.handleBtnClick}> add</button>
+                    <button className='red-button' onClick={this.handleBtnClick}> add</button>
+
+                    {/*define style of button via property set directly*/}
+                    {/*<button style={{background: 'red', color: '#0fff'}} onClick={this.handleBtnClick}> add</button>*/}
+
                 </div>
                 <ul>
                     {this.state.list.map((item, index) => {
                         // pass delete method to child item component, then item can communicate with paraent component via
                         // call method.
-                        return <Item key={index} name={item} index={index} delete={this.deleteItem}/>
+                        return (<Item
+                            key={index}
+                            name={item}
+                            index={index}
+                            delete={this.deleteItem}
+                        />)
+
                             // return <li key={index} onClick={this.handleOnItemClick.bind(this, index)}>{item}</li>
                         }
                     )}
                 </ul>
-            </div>
+            </React.Fragment>
         );
     }
 }
